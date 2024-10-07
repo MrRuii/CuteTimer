@@ -9,7 +9,7 @@ def start_timer():
         minutes = int(entry_minutes.get())
         seconds = int(entry_seconds.get())
     except ValueError:
-        messagebox.showerror("Errore", "Per favore inserisci valori numerici validi!")
+        messagebox.showerror("Error", "Please enter a number!")
         return
     
     total_seconds = minutes * 60 + seconds
@@ -18,12 +18,12 @@ def start_timer():
         for remaining in range(total_seconds, 0, -1):
             mins, secs = divmod(remaining, 60)
             timer_display = f"{mins:02d}:{secs:02d}"
-            animate_label(timer_display)  # Aggiunge animazione ad ogni aggiornamento
+            #animate_label(timer_display)  # Aggiunge animazione ad ogni aggiornamento
             time.sleep(1)
         
         # Quando il tempo finisce
         label_timer.config(text="00:00")
-        messagebox.showinfo("Tempo Scaduto", "🎉⏰ Il tempo è scaduto! Ottimo lavoro!")
+        messagebox.showinfo("Time Expired", "🎉⏰ Time is up! Great work!")
 
     # Usa un thread separato per non bloccare l'interfaccia
     threading.Thread(target=countdown).start()
@@ -56,7 +56,7 @@ label_font = ("Arial", 16)
 button_font = ("Arial", 14, "bold")
 
 # Etichetta del titolo
-label_title = tk.Label(window, text="Cute Timer ⏰", font=title_font, fg="#8B4513", bg="#f5deb3")
+label_title = tk.Label(window, text=" 🍂 Cute Timer 🍂", font=title_font, fg="#8B4513", bg="#f5deb3")
 label_title.pack(pady=5)
 
 # Etichette e campi di input
