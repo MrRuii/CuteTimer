@@ -1,0 +1,3 @@
+([('CuteTimer',
+   '/Users/michelesantoro/Documents/Git : Workspace :/CuteTimer/dist/CuteTimer',
+   'EXECUTABLE')],)
