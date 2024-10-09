@@ -17,7 +17,7 @@
 ---
 
 ### 🎀 How to Use:
-1. **Use the terminal for open the py file 🚀
+1. **Use the .exe file for start 🚀
 1. **Set the time** ⏳
 2. **Click Start** 🐾
 3. **Relax and study** ✨
