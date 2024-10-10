@@ -5,6 +5,7 @@ import threading
 from BtnFun import (hideButton, startButton)
 from PIL import Image, ImageTk
 from themes import themes
+import playsound
 
 
 
@@ -20,25 +21,30 @@ def start_timer():
     total_seconds = minutes * 60 + seconds
     
     def countdown():
-        hideButton(button_start)
-        hideButton(label_minutes)
-        hideButton(entry_minutes)
-        hideButton(label_seconds)
-        hideButton(entry_seconds)
-        for remaining in range(total_seconds, 0, -1):
-            mins, secs = divmod(remaining, 60)
-            timer_display = f"{mins:02d}:{secs:02d}"
-            animate_label(timer_display)  # Aggiunge animazione ad ogni aggiornamento
-            time.sleep(1)
-        
-        # Quando il tempo finisce
-        startButton(button_start)
-        startButton(label_minutes)
-        startButton(entry_minutes)
-        startButton(label_seconds)
-        startButton(entry_seconds)
-        label_timer.config(text="00:00")
-        messagebox.showinfo("Time Expired", "🎉⏰ Time is up! Great work!")
+        if (total_seconds != 0):
+            hideButton(button_start)
+            hideButton(label_minutes)
+            hideButton(entry_minutes)
+            hideButton(label_seconds)
+            hideButton(entry_seconds)
+            for remaining in range(total_seconds, 0, -1):
+                mins, secs = divmod(remaining, 60)
+                timer_display = f"{mins:02d}:{secs:02d}"
+                animate_label(timer_display)  # Aggiunge animazione ad ogni aggiornamento
+                time.sleep(1)
+            
+            # Quando il tempo finisce
+            startButton(button_start)
+            startButton(label_minutes)
+            startButton(entry_minutes)
+            startButton(label_seconds)
+            startButton(entry_seconds)
+            label_timer.config(text="00:00")
+            playsound.playsound("./Alert.mp3", True)
+            messagebox.showinfo("Time Expired", "🎉⏰ Time is up! Great work!")
+        else :
+            messagebox.showinfo("Error","Enter at least one second")
+
 
     # Usa un thread separato per non bloccare l'interfaccia
     threading.Thread(target=countdown).start()
