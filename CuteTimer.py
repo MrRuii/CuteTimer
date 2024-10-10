@@ -115,7 +115,7 @@ apply_theme(themes["autumn"])
 #----------------------------------------------------------
 def on_radio_selection():
     print(f"You selected: {selected_option.get()}")
-    apply_theme(selected_option.get())
+    apply_theme(themes[f"{selected_option.get()}"])
 
 
 
