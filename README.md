@@ -5,7 +5,7 @@
 - **Main Features:**
   - **Set the time**: enter minutes and seconds.
   - **Start the countdown**: watch the time tick away.
-  - **Window Alert**: a sweet signal when the time is up! 
+  - **Sound Alert**: a sweet signal when the time is up! 
 
 ---
 
