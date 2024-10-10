@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-import time
+import time 
 import threading
 from BtnFun import (hideButton, startButton)
 
@@ -59,7 +59,7 @@ def animate_label(new_time):
 window = tk.Tk()
 window.title("Cute Timer")
 window.geometry("600x225")
-window.maxsize(width=600, height=225)
+window.maxsize(width=600, height=425)
 window.config(bg="#f5deb3")
 
 # Stile
@@ -99,5 +99,32 @@ button_start.grid(row=0, column=0, padx=5, pady=5)
 button_quit = tk.Button(frame_buttons, text="Exit", font=button_font, bg="#ff4500", fg="white", command=window.quit)
 button_quit.grid(row=0, column=1, padx=5, pady=5)
 
-# Avvio del loop principale
+#----------------------------------------------------------
+def on_radio_selection():
+    print(f"You selected: {selected_option.get()}")
+    if (selected_option.get() == 'Option 2'):
+        button_start = tk.Button(frame_buttons, text="Start", font=button_font, bg="#ff4500", fg="white", command=start_timer)
+        button_start.grid(row=0, column=0, padx=5, pady=5)
+
+
+
+# Create a StringVar to hold the selected value
+selected_option = tk.StringVar()
+selected_option.set("Option 1")  # Default value
+
+# Create Radiobuttons
+radio1 = tk.Radiobutton(window, text="Option 1", variable=selected_option, value="Option 1")
+radio2 = tk.Radiobutton(window, text="Option 2", variable=selected_option, value="Option 2")
+radio3 = tk.Radiobutton(window, text="Option 3", variable=selected_option, value="Option 3")
+radio3 = tk.Radiobutton(window, text="Option 4", variable=selected_option, value="Option 4")
+
+
+# Place the Radiobuttons in the window
+radio1.pack(anchor="w")
+radio2.pack(anchor="w")
+radio3.pack(anchor="w")
+
+# Create a button to print the selected option
+select_button = tk.Button(window, text="Select", command=on_radio_selection)
+select_button.pack(pady=10)# Avvio del loop principale
 window.mainloop()
