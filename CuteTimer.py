@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import messagebox
 import time 
@@ -8,6 +9,10 @@ from themes import themes
 import playsound
 
 
+# Functions for get dinamically the path of the alert
+base_dir = os.path.dirname(os.path.abspath(__file__))
+sound_path = os.path.join(base_dir, 'Alert.mp3')
+sound_path = sound_path.replace("\\", "\\\\")
 
 # Funzione per avviare il timer con animazione
 def start_timer():
@@ -19,14 +24,11 @@ def start_timer():
         return
     
     total_seconds = minutes * 60 + seconds
-    
+    elements = [button_start, label_minutes, entry_minutes, label_seconds, entry_seconds]
     def countdown():
         if (total_seconds != 0):
-            hideButton(button_start)
-            hideButton(label_minutes)
-            hideButton(entry_minutes)
-            hideButton(label_seconds)
-            hideButton(entry_seconds)
+            for element in elements:
+                hideButton(element)
             for remaining in range(total_seconds, 0, -1):
                 mins, secs = divmod(remaining, 60)
                 timer_display = f"{mins:02d}:{secs:02d}"
@@ -34,13 +36,11 @@ def start_timer():
                 time.sleep(1)
             
             # Quando il tempo finisce
-            startButton(button_start)
-            startButton(label_minutes)
-            startButton(entry_minutes)
-            startButton(label_seconds)
-            startButton(entry_seconds)
+
+            for element in elements:
+                startButton(element)
             label_timer.config(text="00:00")
-            playsound.playsound("./Alert.mp3", True)
+            playsound.playsound(sound_path, True)
             messagebox.showinfo("Time Expired", "🎉⏰ Time is up! Great work!")
         else :
             messagebox.showinfo("Error","Enter at least one second")
@@ -116,7 +116,7 @@ button_quit = tk.Button(frame_buttons, text="Exit", width=8, command=window.quit
 button_quit.grid(row=0, column=1, padx=10)
 
 # Applica il tema autunnale
-apply_theme(themes["autumn"])
+apply_theme(themes["Autumn"])
 
 #----------------------------------------------------------
 def on_radio_selection():
@@ -130,10 +130,10 @@ selected_option = tk.StringVar()
 selected_option.set("Option 1")  # Default value
 
 # Create Radiobuttons
-radio1 = tk.Radiobutton(window, text="Autumn", variable=selected_option, value="autumn")
-radio2 = tk.Radiobutton(window, text="Winter", variable=selected_option, value="winter")
-radio3 = tk.Radiobutton(window, text="Spring", variable=selected_option, value="spring")
-radio4 = tk.Radiobutton(window, text="Summer", variable=selected_option, value="summer")
+radio1 = tk.Radiobutton(window, text="Autumn", variable=selected_option, value="Autumn")
+radio2 = tk.Radiobutton(window, text="Winter", variable=selected_option, value="Winter")
+radio3 = tk.Radiobutton(window, text="Spring", variable=selected_option, value="Spring")
+radio4 = tk.Radiobutton(window, text="Summer", variable=selected_option, value="Summer")
 
 
 # Place the Radiobuttons in the window
