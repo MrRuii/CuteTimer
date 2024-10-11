@@ -15,7 +15,8 @@ themes = {
         "font_title": ("Arial", 24, "bold"),
         "font_label": ("Arial", 14),
         "font_timer": ("Arial", 48, "bold"),
-        "font_button": ("Arial", 12, "bold")
+        "font_button": ("Arial", 12, "bold"),
+        "window_title": "🍂 Cute Timer 🍂"
     },
     "Winter": {
         "bg": "#e0f7fa",
@@ -31,7 +32,9 @@ themes = {
         "font_title": ("Arial", 24, "bold"),
         "font_label": ("Arial", 14),
         "font_timer": ("Arial", 48, "bold"),
-        "font_button": ("Arial", 12, "bold")
+        "font_button": ("Arial", 12, "bold"),
+        "window_title": "☃️ Cute Timer ☃️"
+
     },
     "Spring": {
         "bg": "#e6ffe6",
@@ -47,7 +50,9 @@ themes = {
         "font_title": ("Arial", 24, "bold"),
         "font_label": ("Arial", 14),
         "font_timer": ("Arial", 48, "bold"),
-        "font_button": ("Arial", 12, "bold")
+        "font_button": ("Arial", 12, "bold"),
+        "window_title": "💮 Cute Timer 💮"
+
     },
     "Summer": {
         "bg": "#fffacd",
@@ -63,6 +68,8 @@ themes = {
         "font_title": ("Arial", 24, "bold"),
         "font_label": ("Arial", 14),
         "font_timer": ("Arial", 48, "bold"),
-        "font_button": ("Arial", 12, "bold")
+        "font_button": ("Arial", 12, "bold"),
+        "window_title": "🌊 Cute Timer 🌊"
+
     }
 }
