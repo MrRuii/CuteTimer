@@ -68,6 +68,8 @@ def animate_label(new_time):
     # Funzione per applicare il tema autunnale
 def apply_theme(theme):
     window.config(bg=theme["bg"])
+    frame_input.config(bg=theme["bg"])
+    frame_buttons.config(bg=theme["bg"])
     label_title.config(fg=theme["fg_title"], bg=theme["bg"], font=theme["font_title"])
     label_minutes.config(fg=theme["fg_label"], bg=theme["bg"], font=theme["font_label"])
     entry_minutes.config(bg=theme["entry_bg"], fg=theme["entry_fg"], font=theme["font_label"])
@@ -91,7 +93,7 @@ label_title.pack(pady=5)
 frame_input = tk.Frame(window)
 frame_input.pack(pady=10)
 
-label_minutes = tk.Label(frame_input, text="Minutes:")
+label_minutes = tk.Label(frame_input, text="Minutes:",)
 label_minutes.grid(row=0, column=0, padx=10)
 entry_minutes = tk.Entry(frame_input, width=5, justify="center")
 entry_minutes.grid(row=0, column=1, padx=5)
