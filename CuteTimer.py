@@ -1,5 +1,6 @@
 import os
 import tkinter as tk
+from tkinter import ttk
 from tkinter import messagebox
 import time 
 import threading
@@ -7,6 +8,9 @@ from BtnFun import (hideButton, startButton)
 from PIL import Image, ImageTk
 from themes import themes
 import playsound
+
+
+
 
 
 # Functions for get dinamically the path of the alert
@@ -70,7 +74,7 @@ def apply_theme(theme):
     window.config(bg=theme["bg"])
     frame_input.config(bg=theme["bg"])
     frame_buttons.config(bg=theme["bg"])
-    label_title.config(fg=theme["fg_title"], bg=theme["bg"], font=theme["font_title"])
+    label_title.config(fg=theme["fg_title"], bg=theme["bg"], font=theme["font_title"], text=theme["window_title"])
     label_minutes.config(fg=theme["fg_label"], bg=theme["bg"], font=theme["font_label"])
     entry_minutes.config(bg=theme["entry_bg"], fg=theme["entry_fg"], font=theme["font_label"])
     label_seconds.config(fg=theme["fg_label"], bg=theme["bg"], font=theme["font_label"])
@@ -85,8 +89,17 @@ window = tk.Tk()
 window.title("🍂 Cute Timer 🍂")
 window.geometry("600x300")
 
+
+#test area
+
+tendina = ttk.Combobox(window, width=18)
+tendina['values']=['element 1', 'element 2', 'element 3']
+tendina.pack()
+
+#fine test area
+
 # Etichetta del titolo
-label_title = tk.Label(window, text="🍂 Cute Timer 🍂")
+label_title = tk.Label(window,)
 label_title.pack(pady=5)
 
 # Etichette e campi di input per il tempo (minuti e secondi)
