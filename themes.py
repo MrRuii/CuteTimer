@@ -1,7 +1,7 @@
 #themes dictionary
 
 themes = {
-    "autumn": {
+    "Autumn": {
         "bg": "#f5deb3",              
         "fg_title": "#8B4513",        
         "fg_label": "#8B4513",        
@@ -17,7 +17,7 @@ themes = {
         "font_timer": ("Arial", 48, "bold"),
         "font_button": ("Arial", 12, "bold")
     },
-    "winter": {
+    "Winter": {
         "bg": "#e0f7fa",
         "fg_title": "#003366",
         "fg_label": "#003366",
@@ -33,7 +33,7 @@ themes = {
         "font_timer": ("Arial", 48, "bold"),
         "font_button": ("Arial", 12, "bold")
     },
-    "spring": {
+    "Spring": {
         "bg": "#e6ffe6",
         "fg_title": "#006400",
         "fg_label": "#006400",
@@ -49,7 +49,7 @@ themes = {
         "font_timer": ("Arial", 48, "bold"),
         "font_button": ("Arial", 12, "bold")
     },
-    "summer": {
+    "Summer": {
         "bg": "#fffacd",
         "fg_title": "#ff4500",
         "fg_label": "#ff4500",
